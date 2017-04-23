@@ -1,0 +1,338 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif|Oswald');
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+$main-color: orange;
+
+$primary-font: 'Droid Serif', serif;
+$header-font: 'Oswald', sans-serif;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+li {
+ font-family: 'Oswald', sans-serif;
+}
+
+p,
+input {
+ font-family: 'Droid Serif', serif;
+}
+
+body {
+ margin-top:90px;
+}
+.25space {
+  margin-top:25px;
+}
+
+iframe {
+  margin-top:25px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid $main-color;
+}
+
+.mainColor {
+  color:$main-color;
+}
+
+.panel-dirt {
+  margin-top:15px;
+  border-color:$main-color;
+}
+
+.panel-dirt> .panel-heading {
+    color: #fff;
+    background-color:$main-color;
+    border-color: $main-color;
+}
+
+.btn-dirt {
+    color:$main-color;
+    background-color: #000;
+    border-color: $main-color;
+}
+
+.btn-dirt:hover {
+  background-color:#444;
+  border-color: $main-color;
+  color:#f8f8f8;
+}
+
+/*  NAVBAR -------------------------------------------------------------------------  */
+
+.navbar-default {
+ background-color:#000;
+ border:none;
+ border-bottom:1px solid $main-color;
+}
+
+.navbar-default .navbar-nav>li>a {
+ color:#f8f8f8;
+ font-size:1.6em;
+ padding:35px 10px;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+ color: orange;
+}
+
+.navbar-default .navbar-brand {
+ color:#f8f8f8;
+}
+
+.navbar-brand {
+  height:90px;
+  padding:5px 15px;
+}
+
+.navbar-brand>img {
+  height:80px;
+}
+
+@media(max-width:768px) {
+
+  .navbar-brand {
+    height:70px;
+    padding:5px 10px;
+  }
+
+  .navbar-brand>img {
+    height:60px;
+  }
+
+  .navbar-default .navbar-nav>li>a {
+   color:#f8f8f8;
+   font-size:1.2em;
+   padding:10px 5px;
+  }
+}
+
+/*  HOME BANNER --------------------------------------------------------------------- */
+
+.homeBanner {
+ height:500px;
+ background: url('../images/slider/enduro1.jpg')no-repeat center center;
+ background-size:cover;
+ background-color:#000;
+ border-bottom:1px solid $main-color;
+}
+
+.homeBanner h1 {
+ color:$main-color;
+ text-shadow:1px 1px 1px #444;
+ margin-top:50%;
+ border-left:3px solid $main-color;
+ padding-left:10px;
+}
+
+.homeBannerMid {
+ color:#f8f8f8;
+}
+
+.homeBannerMid i {
+ margin-top:50%;
+}
+
+.smallBanner {
+ color:$main-color;
+ margin-top:none;
+}
+
+@media(max-width:991px) {
+ .homeBanner {
+   height:350px;
+ }
+
+ .homeBanner h1 {
+   margin-top:10%;
+ }
+
+ .homeBannerMid i {
+   margin-top:5%;
+}
+}
+
+@media(max-width:768px) {
+ .homeBanner {
+   height:300px;
+ }
+
+ .homeBanner h1 {
+   margin-top:5%;
+ }
+
+ .homeBannerMid i {
+   display:none;
+}
+}
+
+/*  Home Info --------------------------------------------------------------------- */
+
+.homeInfo {
+ color:#000;
+ margin-bottom:25px;
+}
+
+.homeInfo hr {
+ border-top: 1px solid #222;
+}
+
+
+.btn-main {
+   background-color:rgba(0,0,0,.0);
+   border:1px solid #fff;
+   margin:10px 5px 10px 5px;
+   color:#fff;
+   font-size:1.0em;
+ }
+
+ .infoBlocks .row {
+   margin:0;
+ }
+
+ .infoBlocks .col-md-4 {
+   padding-left:0;
+   padding-right:0;
+   margin-bottom:-10px;
+ }
+
+ .hovereffect {
+   width: 100%;
+   height: 100%;
+   float: left;
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   cursor: default;
+   background: $main-color;
+   border-bottom: 1px solid $main-color;
+ }
+
+ .hovereffect .overlay {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   overflow: hidden;
+   top: 0;
+   left: 0;
+   padding: 30px 20px;
+   font-size:1.5em;
+ }
+
+ .hovereffect img {
+   display: block;
+   position: relative;
+   max-width: none;
+   width: calc(100% + 20px);
+   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+   transition: opacity 0.35s, transform 0.35s;
+   -webkit-transform: translate3d(-10px,0,0);
+   transform: translate3d(-10px,0,0);
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+ }
+
+ .hovereffect:hover img {
+   opacity: 0.2;
+   filter: alpha(opacity=20);
+   -webkit-transform: translate3d(0,0,0);
+   transform: translate3d(0,0,0);
+ }
+
+ .hovereffect h3 {
+   text-transform: uppercase;
+   color: #f8f8f8;
+   text-shadow:1px 1px 1px #000;
+   text-align: center;
+   position: relative;
+   font-size: 1.6em;
+   overflow: hidden;
+   padding: 0.1em 0;
+   background-color: transparent;
+ }
+
+ .hovereffect h2:after {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background: #fff;
+   content: '';
+   -webkit-transition: -webkit-transform 0.35s;
+   transition: transform 0.35s;
+   -webkit-transform: translate3d(-100%,0,0);
+   transform: translate3d(-100%,0,0);
+ }
+
+ .hovereffect:hover h2:after {
+   -webkit-transform: translate3d(0,0,0);
+   transform: translate3d(0,0,0);
+ }
+
+ .hovereffect a, .hovereffect p {
+   color: #FFF;
+   opacity: 0;
+   filter: alpha(opacity=0);
+   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+   transition: opacity 0.35s, transform 0.35s;
+   -webkit-transform: translate3d(100%,0,0);
+   transform: translate3d(100%,0,0);
+ }
+
+ .hovereffect:hover a, .hovereffect:hover p {
+   opacity: 1;
+   filter: alpha(opacity=100);
+   -webkit-transform: translate3d(0,0,0);
+   transform: translate3d(0,0,0);
+ }
+
+/*  SOCIAL --------------------------------------------------------------------- */
+
+footer {
+  background-color:#000;
+  color:#f8f8f8;
+}
+
+.socialHome {
+ padding-top:25px;
+ padding-bottom:25px;
+ border-top:1px solid $main-color;
+}
+
+.socialHome a {
+ color:#f8f8f8;
+}
+
+.socialHome a:hover {
+ color: $main-color;
+}
+
+.socialHome hr {
+  border-top:1px solid $main-color;
+}
+
+.socialHome p,
+.socialHome h3 {
+  color: $main-color;
+}
+
+
+.spacer {
+ padding-top: 40px;
+}
