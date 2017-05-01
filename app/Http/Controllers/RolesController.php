@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Dirtvid;
-use Auth;
-use Carbon\Carbon;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
-class DirtvidsController extends Controller
+class RolesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class DirtvidsController extends Controller
      */
     public function index()
     {
-        $dirtvids = Dirtvid::orderBy('created_at', 'desc')->get();
-        return view('dirtvids.index', compact('dirtvids'));
+        $roles = Role::all();
+        return view('admin.rolesindex', compact('roles'));
     }
 
     /**
@@ -28,7 +27,7 @@ class DirtvidsController extends Controller
      */
     public function create()
     {
-        return view('dirtvids.create');
+        return view('admin.rolesCreate');
     }
 
     /**
@@ -39,15 +38,11 @@ class DirtvidsController extends Controller
      */
     public function store(Request $request)
     {
-        $d = new Dirtvid;
-        $d->user_id = Auth::id();
-        $d->title = $request->title;
-        $d->url = $request->url;
-        $d->small_desc = $request->small_desc;
-        $d->description = $request->description;
-        $d->save();
+        $r = new Role;
+        $r->name = $request->name;
+        $r->save();
 
-        return redirect('/dirtvids');
+        return back()->with('status', 'Role Created');
     }
 
     /**
@@ -58,8 +53,7 @@ class DirtvidsController extends Controller
      */
     public function show($id)
     {
-      $dirtvid = Dirtvid::whereId($id)->first();
-      return view('dirtvids.show', compact('dirtvid'));
+        //
     }
 
     /**
@@ -70,8 +64,7 @@ class DirtvidsController extends Controller
      */
     public function edit($id)
     {
-        $d = Dirtvid::whereId($id)->first();
-        return view('dirtvids.edit', compact('d'));
+        //
     }
 
     /**
@@ -83,15 +76,7 @@ class DirtvidsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $d = Dirtvid::whereId($id)->first();
-        $d->user_id = Auth::id();
-        $d->title = $request->title;
-        $d->url = $request->url;
-        $d->small_desc = $request->small_desc;
-        $d->description = $request->description;
-        $d->save();
-
-        return back()->with('status', $d->title . " Updated");
+        //
     }
 
     /**

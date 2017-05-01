@@ -15,6 +15,12 @@ Videos from WV Trails and Tracks
       </div>
       <hr>
       <h1>{{ $dirtvid->title }} | <span class="mainColor">{{$dirtvid->user->name }}</span></h1>
+
+      @if(Auth::user())
+      <a class="btn btn-primary" href="/dirtvids/{{ $dirtvid->id }}/edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
+      <button class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+      @endif
+
       <h3>Posted on: <span class="mainColor">{{ $dirtvid->created_at->toDayDateTimeString() }}</span></h3>
       {!! $dirtvid->description !!}
     </div>

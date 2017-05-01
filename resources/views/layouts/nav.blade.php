@@ -38,6 +38,21 @@
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
+                @if (Auth::user() && Auth::user()->hasRole('SuperFly'))
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        ADMIN <span class="caret"></span></a>
+
+                    <ul class="dropdown-menu" role="menu">
+
+                        <li><a href="/admin/roles/create"><strong>ADD ROLE</strong></a></li>
+                        <li><a href="/admin/roles"><strong>ALL ROLES</strong></a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/admin/users"><strong>ALL USERS</strong></a></li>
+
+                    </ul>
+                </li>
+                @endif
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}">LOGIN</a></li>
                     <li><a href="{{ route('register') }}">REGISTER</a></li>
