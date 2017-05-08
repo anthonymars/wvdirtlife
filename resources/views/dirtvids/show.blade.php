@@ -15,9 +15,10 @@ Videos from WV Trails and Tracks
       </div>
       <hr>
       <h1>{{ $dirtvid->title }} | <span class="mainColor">{{$dirtvid->user->name }}</span></h1>
-
-      @if(Auth::user())
+      @if(Auth::user() && Auth::id() === $dirtvid->user_id)
       <a class="btn btn-primary" href="/dirtvids/{{ $dirtvid->id }}/edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
+      @endif
+      @if(Auth::user() && Auth::user()->hasRole('SuperFly'))
       <button class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
       @endif
 

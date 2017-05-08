@@ -19,8 +19,16 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-              <li><a href="#"><strong>INFO</strong></a></li>
-              <li><a href="#"><strong>TRAILS</strong></a></li>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                      INFO <span class="caret"></span></a>
+
+                  <ul class="dropdown-menu" role="menu">
+                      <li><a href="/profiles"><strong>Rider Profiles</strong></a></li>
+                      <li><a href="/shops"><strong>Shops</strong></a></li>
+                      <li><a href="/trails"><strong>Trail Systems</strong></a></li>
+                  </ul>
+              </li>
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                       VIDS <span class="caret"></span></a>
@@ -74,6 +82,7 @@
                                     {{ csrf_field() }}
                                 </form>
                             </li>
+                            <li><a href="/profiles/{{Auth::id()}}">Your Profile</a></li>
                         </ul>
                     </li>
                 @endif

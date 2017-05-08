@@ -18,6 +18,7 @@ Edit Your Video
         <h1>Edit {{ $d->title}}</h1>
       </div>
       <div class="panel-body">
+      @if(Auth::user() && Auth::id() === $d->user_id)
       <form action="/dirtvids/{{ $d->id }}/edit" method="post">
         {{ csrf_field() }}
         <div class="form-group">
@@ -45,6 +46,11 @@ Edit Your Video
           <button class="btn btn-dirt" type="submit"><i class="fa fa-pencil-square-o"></i> edit Video</button>
         </div>
       </form>
+      @else
+      <div class="alert alert-danger">
+        <p>Oh No He Didn't</p>
+      </div>
+      @endif
       </div>
     </div>
   </div>

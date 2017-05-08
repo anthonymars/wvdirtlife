@@ -32,4 +32,8 @@ class User extends Authenticatable
     public function dirtvids() {
       return $this->hasMany('App\Dirtvid');
     }
+
+    public function profiles() {
+      return $this->hasOne('App\Profile');
+    }
 }

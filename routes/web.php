@@ -12,6 +12,16 @@ Route::post('/dirtvids/{id}/edit', 'DirtvidsController@update');
 
 Route::post('/dirtvids', 'DirtvidsController@store');
 
+/* ---------------------------------------------   Profiles */
+Route::get('/profiles', 'ProfilesController@index');
+Route::get('/profiles/create', 'ProfilesController@create');
+Route::get('/profiles/{id}', 'ProfilesController@show');
+Route::get('/profiles/{id}/edit', 'ProfilesController@edit');
+Route::post('/profiles/{id}/edit', 'ProfilesController@update');
+
+Route::post('/profiles', 'ProfilesController@store');
+Route::post('/profiles', 'ProfilesController@update');
+
 /*  Admin Stuff */
 Route::get('/admin/roles', 'RolesController@index');
 Route::get('/admin/roles/create', 'RolesController@create');
