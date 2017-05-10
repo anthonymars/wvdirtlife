@@ -13,8 +13,10 @@ Edit Your Profile
         <h1>Edit Your Profile</h1>
       </div>
       <div class="panel-body">
+        @if(empty($profile))
+        <p>One day in the future.. Things are going to start working out for you... until then... I leave you with this</p>
+        @else
         <form enctype="multipart/form-data" method="post">
-
           {{ csrf_field() }}
           <div class="form-group">
             <label for="location">Location</label>
@@ -38,8 +40,8 @@ Edit Your Profile
           </div>
 
           <div class="form-group">
-            <img src="../../images/profiles/large/large-{{$profile->pic_url}}" alt="profile pic" class="img img-responsive topSmallSpace">
-            <label for="pic_url">Current Rider Pic(New Pic won't show until you click 'Edit Profile')</label>
+            <img src="../../images/profiles/small/{{$profile->pic_url}}" alt="profile pic" class="img img-responsive topSmallSpace">
+            <label for="pic_url">Current Rider Pic (New Pic will not load until you click 'Edit Profile')</label>
             <input type="file" name="pic_url" >
 
           </div>
@@ -47,7 +49,7 @@ Edit Your Profile
             <button type="submit" class="btn btn-dirt"><i class="fa fa-pencil"></i> Edit Profile</button>
           </div>
         </form>
-
+        @endif
       </div>
     </div>
  </div>

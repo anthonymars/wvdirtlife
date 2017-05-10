@@ -50,33 +50,31 @@ Southern WV Enduro Trails and Info
 	<div class="row">
 		<div class="col-md-4 col-xs-12">
 			<div class="hovereffect">
-				<img class="img img-responsive" src="../images/slider/test1.jpg" alt="">
+				<img class="img img-responsive" src="../images/slider/trails_block.jpg" alt="">
 				<div class="overlay">
 					<h3>TRAIL INFO</h3>
 					<p>Local Trails and Tracks</p>
-					<p><a class="btn btn-main" href="">INFO</a></p>
+					<p><a class="btn btn-main" href="/trails">INFO</a></p>
 				</div>
 			</div>
-
 		</div>
 		<div class="col-md-4 col-xs-12">
 			<div class="hovereffect">
-				<img class="img img-responsive" src="../images/slider/test1.jpg" alt="">
+				<img class="img img-responsive" src="../images/slider/shops_block.jpg" alt="">
 				<div class="overlay">
 					<h3>LOCAL SHOPS</h3>
 					<p>Parts, Bikes, Wrenches</p>
-					<p><a class="btn btn-main" href="">Fix it</a></p>
+					<p><a class="btn btn-main" href="/shops">Fix it</a></p>
 				</div>
 			</div>
-
 		</div>
 		<div class="col-md-4 col-xs-12">
 			<div class="hovereffect">
-				<img class="img img-responsive" src="../images/slider/test1.jpg" alt="">
+				<img class="img img-responsive" src="../images/slider/profile_block.jpg" alt="">
 				<div class="overlay">
-					<h3>Info</h3>
-					<p>stuff</p>
-					<p><a class="btn btn-main" href=""></a></p>
+					<h3>Profiles</h3>
+					<p>Just Real Hot Pics</p>
+					<p><a class="btn btn-main" href="/profiles"><i class="fa fa-heart"></i> Profiles</a></p>
 				</div>
 			</div>
 

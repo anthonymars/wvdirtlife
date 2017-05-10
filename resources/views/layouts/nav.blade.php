@@ -82,7 +82,7 @@
                                     {{ csrf_field() }}
                                 </form>
                             </li>
-                            <li><a href="/profiles/{{Auth::id()}}">Your Profile</a></li>
+                            <li><a href="/profiles/{{Auth::user()->profiles->id}}">Your Profile</a></li>
                         </ul>
                     </li>
                 @endif

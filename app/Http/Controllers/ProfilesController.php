@@ -50,17 +50,16 @@ class ProfilesController extends Controller
           $pic_url = $request->file('pic_url');
           $time = time();
           $filename = 'rider-' . $time . '.' . $pic_url->getClientOriginalExtension();
-          $filesm = 'small-' . $filename;
-          $filelg = 'large-' . $filename;
+
 
           Image::make($pic_url)->orientate()->resize(null, 200, function($constraint) {
             $constraint->aspectRatio();
-          })->save( public_path('/images/profiles/small/' . $filesm ));
+          })->save( public_path('/images/profiles/small/' . $filename ));
 
           Image::make($pic_url)->orientate()->resize(400, null, function($constraint) {
             $constraint->aspectRatio();
             $constraint->upsize();
-          })->save( public_path('/images/profiles/large/' . $filelg ));
+          })->save( public_path('/images/profiles/large/' . $filename ));
 
           $profile->pic_url = $filename;
         } else {
@@ -81,7 +80,7 @@ class ProfilesController extends Controller
      */
     public function show($id)
     {
-        $profile = Profile::whereUserId($id)->first();
+        $profile = Profile::whereId($id)->first();
         if (empty($profile)) {
           return redirect('/profiles/create');
         }
@@ -121,17 +120,16 @@ class ProfilesController extends Controller
         $pic_url = $request->file('pic_url');
         $time = time();
         $filename = 'rider-' . $time . '.' . $pic_url->getClientOriginalExtension();
-        $filesm = 'small-' . $filename;
-        $filelg = 'large-' . $filename;
+
 
         Image::make($pic_url)->orientate()->resize(null, 200, function($constraint) {
           $constraint->aspectRatio();
-        })->save( public_path('/images/profiles/small/' . $filesm ));
+        })->save( public_path('/images/profiles/small/' . $filename ));
 
         Image::make($pic_url)->orientate()->resize(400, null, function($constraint) {
           $constraint->aspectRatio();
           $constraint->upsize();
-        })->save( public_path('/images/profiles/large/' . $filelg ));
+        })->save( public_path('/images/profiles/large/' . $filename ));
 
         $profile->pic_url = $filename;
       } else {
@@ -140,7 +138,7 @@ class ProfilesController extends Controller
       }
 
       $profile->save();
-      $id = Auth::id();
+      $id = $profile->id;
       return redirect('/profiles/'.$id);
     }
 

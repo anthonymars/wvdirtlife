@@ -13,4 +13,12 @@ class PagesController extends Controller
       $d = Dirtvid::whereUserId(1)->orderBy('created_at', 'desc')->first();
       return view('pages.index', compact('d'));
     }
+
+    public function shops() {
+      return view('pages.shops');
+    }
+
+    public function trails() {
+      return view('pages.trails');
+    }
 }

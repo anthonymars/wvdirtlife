@@ -2,6 +2,8 @@
 
 /* ---------------------------------------------   Pages */
 Route::get('/', 'PagesController@index');
+Route::get('/trails', 'PagesController@trails');
+Route::get('/shops', 'PagesController@shops');
 
 /* ---------------------------------------------   Dirtvids */
 Route::get('/dirtvids', 'DirtvidsController@index');
@@ -18,9 +20,7 @@ Route::get('/profiles/create', 'ProfilesController@create');
 Route::get('/profiles/{id}', 'ProfilesController@show');
 Route::get('/profiles/{id}/edit', 'ProfilesController@edit');
 Route::post('/profiles/{id}/edit', 'ProfilesController@update');
-
 Route::post('/profiles', 'ProfilesController@store');
-Route::post('/profiles', 'ProfilesController@update');
 
 /*  Admin Stuff */
 Route::get('/admin/roles', 'RolesController@index');

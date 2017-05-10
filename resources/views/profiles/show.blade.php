@@ -10,15 +10,15 @@ Rider Profiles
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <img src="../images/profiles/large/large-{{$profile->pic_url}}" alt="profile pic" class="img img-responsive topSmallSpace">
-      @if ($profile->id === Auth::id())
-      <a href="/profiles/{{$profile->id}}/edit" class="btn btn-dirt topSmallSpace"><i class="fa fa-pencil"></i> Edit Profile</a>
-      @endif
+      <img src="../images/profiles/large/{{$profile->pic_url}}" alt="profile pic" class="img img-responsive topSmallSpace">
     </div>
     <div class="col-md-6">
       <h1>{{$profile->user->name}}</h1>
       <h2>LOCATION: {{$profile->location}}</h2>
       <h3>CURRENT BIKE: {{$profile->ride}}</h3>
+      @if ($profile->user_id === Auth::id())
+      <a href="/profiles/{{$profile->id}}/edit" class="btn btn-dirt topSmallSpace"><i class="fa fa-pencil"></i> Edit Profile</a>
+      @endif
       <hr>
       <p>{!!$profile->bio!!}</p>
     </div>
