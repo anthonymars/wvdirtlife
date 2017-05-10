@@ -38,7 +38,7 @@ Southern WV Enduro Trails and Info
 					<span class="mainColor">Dirt / Trail / Rock Garden only!!!</span> No street stuff... unless you are just going to the trails.</p>
 		</div>
 		<div class="col-md-6">
-			@if($d->count() > 0)
+			@if($d)
 			<h3 class="text-center"><strong>{{$d->title}} | {{ $d->user->name }}</strong></h3>
 			<div class="embed-responsive embed-responsive-16by9">
 									<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$d->url}}"></iframe>
