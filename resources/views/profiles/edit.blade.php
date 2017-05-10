@@ -41,12 +41,12 @@ Edit Your Profile
 
           <div class="form-group">
             <img src="../../images/profiles/small/{{$profile->pic_url}}" alt="profile pic" class="img img-responsive topSmallSpace">
-            <label for="pic_url">Current Rider Pic (New Pic will not load until you click 'Edit Profile')</label>
+            <label for="pic_url">Current Rider Pic (New Pic will not load until you click 'Save Changes')</label>
             <input type="file" name="pic_url" >
 
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-dirt"><i class="fa fa-pencil"></i> Edit Profile</button>
+            <button type="submit" class="btn btn-dirt"><i class="fa fa-pencil"></i> Save Changes</button>
           </div>
         </form>
         @endif

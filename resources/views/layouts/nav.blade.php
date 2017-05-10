@@ -46,7 +46,8 @@
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
-                @if (Auth::user() && Auth::user()->hasRole('SuperFly'))
+                @if (Auth::user())
+                @if (Auth::user()->hasRole('SuperFly'))
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         ADMIN <span class="caret"></span></a>
@@ -60,6 +61,7 @@
 
                     </ul>
                 </li>
+                @endif
                 @endif
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}">LOGIN</a></li>
@@ -82,7 +84,11 @@
                                     {{ csrf_field() }}
                                 </form>
                             </li>
+                            @if(Auth::user()->profiles)
                             <li><a href="/profiles/{{Auth::user()->profiles->id}}">Your Profile</a></li>
+                            @else
+                            <li><a href="/profiles/create">Create Your Profile</a></li>
+                            @endif
                         </ul>
                     </li>
                 @endif
