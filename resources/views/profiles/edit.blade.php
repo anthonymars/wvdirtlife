@@ -13,7 +13,7 @@ Edit Your Profile
         <h1>Edit Your Profile</h1>
       </div>
       <div class="panel-body">
-        @if(empty($profile))
+        @if(empty($profile) || $profile->user_id !== Auth::id())
         <p>One day in the future.. Things are going to start working out for you... until then... I leave you with this</p>
         @else
         <form enctype="multipart/form-data" method="post">
