@@ -36,6 +36,9 @@ Southern WV Enduro Trails and Info
 					and clicks on this stuff.</p>
           <p>But that's not all! Register here and you can link your vids for all your loyal fans.
 					<span class="mainColor">Dirt / Trail / Rock Garden only!!!</span> No street stuff... unless you are just going to the trails.</p>
+					<p>I am piecing this site together when I get time just to play around with this
+						framework.  There will be bridges/links to nowhere until I get done so ...
+					<span class="mainColor">you've been warned!!!</span></p>
 		</div>
 		<div class="col-md-6">
 			@if($d)
