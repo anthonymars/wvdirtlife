@@ -4,6 +4,7 @@
 Route::get('/', 'PagesController@index');
 Route::get('/trails', 'PagesController@trails');
 Route::get('/shops', 'PagesController@shops');
+Route::get('/pics', 'PagesController@pics');
 
 /* ---------------------------------------------   Dirtvids */
 Route::get('/dirtvids', 'DirtvidsController@index');

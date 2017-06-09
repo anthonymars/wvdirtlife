@@ -29,6 +29,7 @@
                       <li><a href="/trails"><strong>Trail Systems</strong></a></li>
                   </ul>
               </li>
+              <li><a href="/pics"><strong>IMAGES</strong></a></li>
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                       VIDS <span class="caret"></span></a>

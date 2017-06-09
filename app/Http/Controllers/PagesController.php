@@ -21,4 +21,8 @@ class PagesController extends Controller
     public function trails() {
       return view('pages.trails');
     }
+
+    public function pics() {
+      return view('pages.pics');
+    }
 }
